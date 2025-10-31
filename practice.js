@@ -75,3 +75,65 @@
 // // const user = secondUserList.find((user) => user.userId === 500000)
 // const user = secondUserList[500000]
 // console.timeEnd("find")
+
+// 06
+// const set = new Set();
+// set.add("apple");
+// set.add("banana");
+// set.add("mango");
+// set.add("apple") //(note) duplicat data she nayna
+
+// console.log(set);
+
+// 07
+// const mezba = { userName: "Mezba" }
+// const mizan = { userName: "Mizan" }
+// const tanmoy = { userName: "Tanmoy" }
+
+// const set = new Set();
+// set.add("mizan");
+// set.add("mezba");
+// set.add("tanmoy");
+// set.add("mizan")
+// console.log(set.size);
+
+// 08
+// const arr = ["apple", "mango", "banana", "apple"];
+// const set = new Set(arr);
+// const newArr = Array.from(set);
+// // array korar por push kora jabe
+// newArr.push("tomato");
+// console.log(newArr);
+
+// 09
+// const arr = ["apple", "mango", "banana", "apple"];
+// const set = new Set(arr);
+// console.log(set.delete("tomato"));
+// console.log(set);
+
+// 10
+const arr = ["apple", "banana", "mango", "apple"];
+
+// Brute Force
+const removeDupArr = (arr) => {
+    const newArr = [];
+    arr.forEach(element => {
+        if (!newArr.includes(element)) {
+            newArr.push(element);
+        }
+    });
+    return newArr;
+}
+
+console.log(removeDupArr(arr));
+
+// 11
+// const arr = ["apple", "banana", "mango", "apple"];
+
+// set implementation
+const removeDupSet = (arr) => {
+    const set = new Set(arr);
+    return Array.from(set);
+}
+
+console.log(removeDupSet(arr));
