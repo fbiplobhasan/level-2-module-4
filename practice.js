@@ -111,29 +111,76 @@
 // console.log(set.delete("tomato"));
 // console.log(set);
 
-// 10
-const arr = ["apple", "banana", "mango", "apple"];
-
 // Brute Force
-const removeDupArr = (arr) => {
-    const newArr = [];
-    arr.forEach(element => {
-        if (!newArr.includes(element)) {
-            newArr.push(element);
-        }
-    });
-    return newArr;
-}
-
-console.log(removeDupArr(arr));
-
-// 11
+// 10
 // const arr = ["apple", "banana", "mango", "apple"];
 
+// const removeDupArr = (arr) => {
+//     const newArr = [];
+//     arr.forEach(element => {
+//         if (!newArr.includes(element)) {
+//             newArr.push(element);
+//         }
+//     });
+//     return newArr;
+// }
+
+// console.log(removeDupArr(arr));
+
 // set implementation
+// 11
+// const arr = ["apple", "banana", "mango", "apple"];
+// const removeDupSet = (arr) => {
+//     const set = new Set(arr);
+//     return Array.from(set);
+// }
+
+// console.log(removeDupSet(arr));
+
+function generateSimleData(size) {
+    const itemPool = [
+        "Apple",
+        "Mango",
+        "Banana",
+        "Dragon",
+        "Grap",
+        "Strawberry",
+        "Pineapple",
+        "Watermelon",
+        "Cherry",
+        "Bluberry",
+    ];
+    const generatedData = [];
+    for (let i = 0; i < size; i++) {
+        const randomIndex = Math.floor(Math.random() * itemPool.length);
+        generatedData.push(itemPool[randomIndex]);
+    }
+    return generatedData;
+}
+
+const hugeDataSet = generateSimleData(500000);
+console.log("Data size", hugeDataSet.length6);
+
+// Brute Force
+const arrStartTime = performance.now();
+const removeDupArr = (arr) => {
+    const newArr = [];
+    arr.forEach((element) => {
+        if (!newArr.includes(element)) {
+            newArr.push(element)
+        }
+    });
+    return newArr
+}
+const arrEndTime = performance.now();
+console.log(`Array Implementation took ${arrEndTime - arrStartTime}`);
+
+// Set implementation
+const setStartTime = performance.now();
 const removeDupSet = (arr) => {
     const set = new Set(arr);
     return Array.from(set);
-}
-
-console.log(removeDupSet(arr));
+};
+console.log(removeDupSet(hugeDataSet));
+const setEndTime = performance.now();
+console.log(`Set Implementaion took ${setEndTime - setStartTime}`);
