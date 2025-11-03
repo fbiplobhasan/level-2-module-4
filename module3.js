@@ -154,20 +154,71 @@
 
 // Video (5) just visual class
 // Video (6)
-class Node {
-    constructor(value) {
-        this.value = value;
-        this.next = null;
-    }
-}
+// class Node {
+//     constructor(value) {
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
 
-const head = new Node(10);
-head.next = new Node(20);
-head.next.next = new Node(30);
-console.log(head);
-let temp = head;
+// const head = new Node(10);
+// head.next = new Node(20);
+// head.next.next = new Node(30);
+// console.log(head);
+// let temp = head;
 
-while (temp !== null) {
-    console.log(temp.value, " ");
-    temp = temp.next
-}
+// while (temp !== null) {
+//     console.log(temp.value, " ");
+//     temp = temp.next
+// }
+
+// Video (7)
+// Linked List Implementation - append() and print()
+// class Node {
+//     constructor(value) {
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
+
+// class LinkedList {
+//     constructor() {
+//         this.head = null;
+//         this.tail = null;
+//         this.length = 0;
+//     }
+
+//     append(value) {
+//         const newNode = new Node(value);
+        // if the linked list is empty
+//         if (this.head === null) {
+//             this.head = newNode;
+//             this.tail = newNode;
+//         } else {
+            // if the linked list is not empty
+//             this.tail.next = newNode;
+//             this.tail = newNode;
+//         }
+//         this.length++;
+//     }
+//     prepend() { }
+//     insert() { }
+//     remove() { }
+//     print() {
+//         const arr = [];
+//         let currentNode = this.head;
+//         while (currentNode !== null) {
+//             arr.push(currentNode.value);
+//             currentNode = currentNode.next;
+//         }
+//         console.log(arr.join(" ---> "), " ---> null ");
+//     }
+// }
+
+// const linkedList = new LinkedList();
+
+// linkedList.append(1)
+// linkedList.append(2)
+// linkedList.append(3)
+
+// linkedList.print()
