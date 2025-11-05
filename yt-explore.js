@@ -25,9 +25,18 @@ class Queue {
     }
     dequeue() {
 
+        if (!this.first) {
+            return undefined
+        }
+        this.first = this.first.next;
+        this.length--;
+        return this;
     }
 }
 
 let myQueue = new Queue();
 
 console.log(myQueue.enqueue("rafi"));
+console.log(myQueue.enqueue("rakib"));
+console.log(myQueue.enqueue("hasib"));
+console.log(myQueue.dequeue());
