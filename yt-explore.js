@@ -11,8 +11,17 @@ class Queue {
         this.last = null
         this.length = 0
     }
-    enqueue() {
-
+    enqueue(value) {
+        const newPerson = new Node(value);
+        if (!this.first) {
+            this.first = newPerson;
+            this.last = newPerson;
+        } else {
+            this.last.next = newPerson;
+            this.last = newPerson;
+        }
+        this.length++;
+        return this;
     }
     dequeue() {
 
@@ -20,3 +29,5 @@ class Queue {
 }
 
 let myQueue = new Queue();
+
+console.log(myQueue.enqueue("rafi"));
