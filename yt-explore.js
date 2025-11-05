@@ -57,8 +57,17 @@ class Stack {
         this.arr.push(value)
         return this.arr;
     }
+    pop() {
+        this.arr.pop();
+        return this.arr;
+    }
+    lookUp() {
+       return this.arr[this.arr.length - 1]
+    }
 }
 
 let stack = new Stack();
 console.log(stack.push(50));
 console.log(stack.push(500));
+console.log(stack.lookUp());
+console.log('pop', stack.pop());
