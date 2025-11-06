@@ -155,6 +155,7 @@
 // console.log(isPalindromeTwoPointer("A man, a plan, a canal: Panama"));
 // console.log(isPalindromeTwoPointer("A man, a plan,fgdfgfg a canal: Panama"));
 
+// Video (4)
 // const toSum = (arr, target) => {
 //     const numbMap = new Map();
 
@@ -175,3 +176,29 @@
 // }
 
 // console.log(toSum([2, 11, 8, 1, 15], 9));
+
+// Video (6)
+// Binary Search Algorithm
+
+// console.log([3, 5, 6, 7, 9, 11], 7);
+
+const binarySearch = (arr, target) => {
+    let low = 0;
+    let high = arr.length - 1;
+
+    while (low <= high) {
+        const mid = Math.floor((high + low) / 2);
+        const guess = arr[mid]
+
+        if (guess === target) {
+            return mid;
+        } else if (guess > target) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    return -1;
+}
+
+console.log(binarySearch([3, 5, 6, 7, 9, 11], 7));
