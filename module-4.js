@@ -80,43 +80,98 @@
 
 // Video (3)
 
-import Stack from "./module3.js";
+// import Stack from "./module3.js";
 
-const bracketChecker = (str) => {
-    const stack = new Stack();
+// const bracketChecker = (str) => {
+//     const stack = new Stack();
 
-    const bracketMap = {
-        ")": "(",
-        "}": "{",
-        "]": "["
-    };
+//     const bracketMap = {
+//         ")": "(",
+//         "}": "{",
+//         "]": "["
+//     };
 
-    for (let i = 0; i < str.length; i++) {
-        const char = str[i];
+//     for (let i = 0; i < str.length; i++) {
+//         const char = str[i];
 
-        if (char === "(" || char === "{" || char === "[") {
-            stack.push(char)
-        } else if (char === ")" || char === "}" || char === "]") {
-            if (stack.isEmpty()) {
-                return false;
-            }
+//         if (char === "(" || char === "{" || char === "[") {
+//             stack.push(char)
+//         } else if (char === ")" || char === "}" || char === "]") {
+//             if (stack.isEmpty()) {
+//                 return false;
+//             }
 
-            const expected = bracketMap[char]
-            const got = stack.pop()
+//             const expected = bracketMap[char]
+//             const got = stack.pop()
 
-            console.log("expected: ", expected, "got: ", got);
+//             console.log("expected: ", expected, "got: ", got);
 
-            if (got !== expected) {
-                return false
-            }
-        }
+//             if (got !== expected) {
+//                 return false
+//             }
+//         }
 
-    }
-    return stack.isEmpty()
-}
+//     }
+//     return stack.isEmpty()
+// }
 
-console.log(bracketChecker("([{}])"));
-console.log('===============================');
-console.log(bracketChecker(")([{}])"));
-console.log('===============================');
-console.log(bracketChecker("([{})"));
+// console.log(bracketChecker("([{}])"));
+// console.log('===============================');
+// console.log(bracketChecker(")([{}])"));
+// console.log('===============================');
+// console.log(bracketChecker("([{})"));
+
+// Video (5)
+// const isPalindrome = (str) => {
+//     const normalized = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+//     const reversed = normalized.split("").reverse().join("");
+
+//     if (reversed === normalized) {
+//         return true;
+//     }
+//     return false
+// }
+
+// console.log(isPalindrome("Level"));
+
+// const isPalindromeTwoPointer = (str) => {
+//     const normalized = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+//     let left = 0;
+//     let right = normalized.length - 1;
+
+//     while (left < right) {
+//         if (normalized[left] !== normalized[right]) {
+//             return false
+//         }
+//         left++;
+//         right--;
+//     }
+//     return true
+
+// }
+
+// console.log(isPalindromeTwoPointer("A man, a plan, a canal: Panama"));
+// console.log(isPalindromeTwoPointer("A man, a plan,fgdfgfg a canal: Panama"));
+
+// const toSum = (arr, target) => {
+//     const numbMap = new Map();
+
+//     for (let i = 0; i < arr.length; i++) {
+//         const currentNumber = arr[i]
+//         const complement = target - currentNumber;
+
+//         console.log("current number", currentNumber);
+//         console.log("complement", complement);
+
+//         if (numbMap.has(complement)) {
+//             return [numbMap.get(complement), i];
+//         }
+//         numbMap.set(currentNumber, i)
+//         console.log(numbMap);
+//     }
+//     return undefined;
+// }
+
+// console.log(toSum([2, 11, 8, 1, 15], 9));
