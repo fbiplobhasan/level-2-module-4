@@ -69,41 +69,41 @@
 
 // Video (3)
 // Stack Implementation using Array
-// class Stack {
-//     constructor() {
-//         this.items = [];
-//     }
-//     push(value) {
-//         this.items.push(value);
-//     }
-//     pop() {
-//         if (this.isEmpty()) {
-//             return undefined;
-//         }
-//         return this.items.pop();
-//     }
-//     peek() {
-//         if (this.isEmpty()) {
-//             return undefined;
-//         }
-//         return this.items[this.items.length - 1]
-//     }
-//     isEmpty() {
-//         return this.items.length === 0;
-//     }
-//     print() {
-//         console.log(this.items.slice().reverse().join(" => "));
-//     }
-// }
+export default class Stack {
+    constructor() {
+        this.items = [];
+    }
+    push(value) {
+        this.items.push(value);
+    }
+    pop() {
+        if (this.isEmpty()) {
+            return undefined;
+        }
+        return this.items.pop();
+    }
+    peek() {
+        if (this.isEmpty()) {
+            return undefined;
+        }
+        return this.items[this.items.length - 1]
+    }
+    isEmpty() {
+        return this.items.length === 0;
+    }
+    print() {
+        console.log(this.items.slice().reverse().join(" => "));
+    }
+}
 
-// const stack = new Stack();
+const stack = new Stack();
 
 // console.log(stack.peek());
 // console.log(stack.isEmpty());
 
-// stack.push(10);
-// stack.push(20);
-// stack.push(30);
+stack.push(10);
+stack.push(20);
+stack.push(30);
 
 // stack.print();
 // console.log(stack.peek());
@@ -333,134 +333,134 @@
 // Video (10)
 // Linked List Implementation - remove()
 
-class Node {
-    constructor(value) {
-        this.value = value;
-        this.next = null;
-    }
-}
+// class Node {
+//     constructor(value) {
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
 
-class LinkedList {
-    constructor() {
-        this.head = null;
-        this.tail = null;
-        this.length = 0;
-    }
+// class LinkedList {
+//     constructor() {
+//         this.head = null;
+//         this.tail = null;
+//         this.length = 0;
+//     }
 
-    append(value) {
-        const newNode = new Node(value);
-        // if the linked list is empty
-        if (this.head === null) {
-            this.head = newNode;
-            this.tail = newNode;
-        } else {
-            // if the linked list is not empty
-            this.tail.next = newNode;
-            this.tail = newNode;
-        }
-        this.length++;
-        return this;
-    }
-    prepend(value) {
-        const newNode = new Node(value);
-        // if the linked list is empty
-        if (this.head === null) {
-            this.head = newNode;
-            this.tail = newNode;
-        } else {
-            // if the linked list is not empty
-            newNode.next = this.head;
-            this.head = newNode;
-        }
-        this.length++;
-        return this;
-    }
-    insert(index, value) {
-        if (index < 0 || index > this.length) {
-            console.log("Index out of bound:");
-            return undefined
-        }
-        // if the insert is in the start of the linked list
-        if (index === 0) {
-            return this.prepend(value)
-        }
-        // if the insert is in the end of the list
-        if (index === this.length) {
-            return this.append(value)
-        }
+//     append(value) {
+//         const newNode = new Node(value);
+//         // if the linked list is empty
+//         if (this.head === null) {
+//             this.head = newNode;
+//             this.tail = newNode;
+//         } else {
+//             // if the linked list is not empty
+//             this.tail.next = newNode;
+//             this.tail = newNode;
+//         }
+//         this.length++;
+//         return this;
+//     }
+//     prepend(value) {
+//         const newNode = new Node(value);
+//         // if the linked list is empty
+//         if (this.head === null) {
+//             this.head = newNode;
+//             this.tail = newNode;
+//         } else {
+//             // if the linked list is not empty
+//             newNode.next = this.head;
+//             this.head = newNode;
+//         }
+//         this.length++;
+//         return this;
+//     }
+//     insert(index, value) {
+//         if (index < 0 || index > this.length) {
+//             console.log("Index out of bound:");
+//             return undefined
+//         }
+//         // if the insert is in the start of the linked list
+//         if (index === 0) {
+//             return this.prepend(value)
+//         }
+//         // if the insert is in the end of the list
+//         if (index === this.length) {
+//             return this.append(value)
+//         }
 
-        // if the insert is in the middle
-        // find the leading node
-        const leadingNode = this._traverseToIndex(index - 1);
-        const holdingNode = leadingNode.next;
+//         // if the insert is in the middle
+//         // find the leading node
+//         const leadingNode = this._traverseToIndex(index - 1);
+//         const holdingNode = leadingNode.next;
 
-        const newNode = new Node(value)
+//         const newNode = new Node(value)
 
-        leadingNode.next = newNode;
-        newNode.next = holdingNode;
+//         leadingNode.next = newNode;
+//         newNode.next = holdingNode;
 
-        this.length++;
+//         this.length++;
 
-    }
-    remove(index) {
-        if (index === 0) {
-            const removedItem = this.head.value;
-            this.head = this.head.next;
+//     }
+//     remove(index) {
+//         if (index === 0) {
+//             const removedItem = this.head.value;
+//             this.head = this.head.next;
 
-            if (this.length === 1) {
-                this.tail = null;
-            }
-            this.length--;
-            return removedItem;
-        }
+//             if (this.length === 1) {
+//                 this.tail = null;
+//             }
+//             this.length--;
+//             return removedItem;
+//         }
 
-        const leadingNode = this._traverseToIndex(index - 1)
-        const nodeToRemove = leadingNode.next;
+//         const leadingNode = this._traverseToIndex(index - 1)
+//         const nodeToRemove = leadingNode.next;
 
-        leadingNode.next = nodeToRemove.next;
+//         leadingNode.next = nodeToRemove.next;
 
-        if (leadingNode.next === null) {
-            this.tail = leadingNode;
-        }
-        return nodeToRemove.value;
-    }
-    // private helper method
-    _traverseToIndex(index) {
-        let count = 0;
-        let currentNode = this.head;
-        while (count !== index) {
-            currentNode = currentNode.next;
-            count++;
-        }
-        return currentNode
-    }
-    print() {
-        const arr = [];
+//         if (leadingNode.next === null) {
+//             this.tail = leadingNode;
+//         }
+//         return nodeToRemove.value;
+//     }
+//     // private helper method
+//     _traverseToIndex(index) {
+//         let count = 0;
+//         let currentNode = this.head;
+//         while (count !== index) {
+//             currentNode = currentNode.next;
+//             count++;
+//         }
+//         return currentNode
+//     }
+//     print() {
+//         const arr = [];
 
-        let currentNode = this.head;
+//         let currentNode = this.head;
 
-        while (currentNode !== null) {
-            arr.push(currentNode.value);
-            currentNode = currentNode.next;
-        }
-        console.log(arr.join(" ---> "), " ---> null ");
-    }
-}
+//         while (currentNode !== null) {
+//             arr.push(currentNode.value);
+//             currentNode = currentNode.next;
+//         }
+//         console.log(arr.join(" ---> "), " ---> null ");
+//     }
+// }
 
-const linkedList = new LinkedList();
+// const linkedList = new LinkedList();
 
-linkedList.append("A")
-// linkedList.append("B")
-// linkedList.append("C")
-// linkedList.append("D")
+// linkedList.append("A")
+// // linkedList.append("B")
+// // linkedList.append("C")
+// // linkedList.append("D")
 
-// linkedList.prepend(10)
-// linkedList.prepend(20)
-// linkedList.prepend(30)
+// // linkedList.prepend(10)
+// // linkedList.prepend(20)
+// // linkedList.prepend(30)
 
-linkedList.print()
-// linkedList.insert(2, 100)
-// linkedList.remove(2)
-linkedList.remove(0)
+// linkedList.print()
+// // linkedList.insert(2, 100)
+// // linkedList.remove(2)
+// linkedList.remove(0)
 
-linkedList.print()
+// linkedList.print()
