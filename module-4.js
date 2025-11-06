@@ -1,3 +1,5 @@
+const dataCache = new Map();
+
 const expensiveTask = (id) => {
     console.log("ran the expensive task for: ", id);
     return {
@@ -7,8 +9,18 @@ const expensiveTask = (id) => {
     }
 }
 
-const getData = () => {
-    return expensiveTask;
+const getData = (id) => {
+    if (dataCache.has(id)) {
+        console.log("Cash hit for id: ", id);
+        return dataCache.get(id)
+    }
+    console.log("Cash miss for id: ", id);
+    const data = expensiveTask(id);
+    dataCache.set(id, data)
+    return data
 }
 
+console.log(dataCache);
 console.log(getData(123));
+console.log(getData(123));
+console.log(dataCache);
