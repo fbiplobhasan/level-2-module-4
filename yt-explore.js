@@ -248,6 +248,39 @@
 // for (let key in grouped) {
 //     const total = grouped[key].reduce((sum, item) => sum + item.price, 0)
 //     console.log(key,total);
-//     console.log('aladavabe dekhte chai',grouped[key]);
 // }
 
+// 🔹 টাস্ক: user ও order data join করো
+// 2-9 Denormalizing Data (Client-side join)
+// const userData = [{ id: 1, name: "Biplob Hasan", age: 20 }]
+// const orders = [{ userId: 1, product: "phone" }]
+
+// const joined = orders.map((o) => ({
+//     ...o,
+//     user: userData.find((u) => u.id === o.userId)?.name,
+// }))
+// console.log(joined);
+
+// 🔹 টাস্ক: সময় অনুযায়ী ডেটা গ্রুপ করো
+// 2-10 Binning (Time-based grouping)
+// const times = [1, 3, 5, 10, 15];
+// const bins = times.map((t) => (t < 6 ? "Morning" : "Evening"))
+// console.log(bins);
+
+// 🧱 Module 3: Stack, Queue, Linked List
+// 3-1 Stateless vs Stateful
+
+// 🔹 টাস্ক: Stateless function (কোনো মান ধরে রাখে না)
+// function add(a, b) {
+//     return a + b;
+// }
+// 🔹 Stateful object
+// let counter = 0;
+// function increment() {
+//     counter++;
+// }
+// increment()
+// increment()
+// increment()
+// increment()
+// console.log(counter);
