@@ -161,7 +161,7 @@
 
 // console.time("unshift");
 // list.unshift(0)
-// akhane 0 ta array er shurute jog hobe 
+// akhane 0 ta array er shurute jog hobe
 // console.timeEnd("unshift");
 
 // console.log(list);
@@ -271,10 +271,12 @@
 // 3-1 Stateless vs Stateful
 
 // 🔹 টাস্ক: Stateless function (কোনো মান ধরে রাখে না)
+
 // function add(a, b) {
 //     return a + b;
 // }
-// 🔹 Stateful object
+// // 🔹 Stateful object
+
 // let counter = 0;
 // function increment() {
 //     counter++;
@@ -284,3 +286,93 @@
 // increment()
 // increment()
 // console.log(counter);
+
+// <===Class Constructor===>
+
+// class Person {
+//     constructor(name) {
+//         this.name = name;
+//     }
+//     greet() {
+//         console.log(`Hi, ${this.name}`);
+//     }
+// }
+
+// const p = new Person("Biplob");
+// p.greet();
+
+// <===Stack Implementation===>
+
+// class Stack {
+//     constructor() {
+//         this.items = [];
+//     }
+//     push(item) {
+//         this.items.push(item)
+//     }
+//     pop() {
+//         return this.items.pop();
+//     }
+// }
+
+// const stack = new Stack();
+// stack.push(10);
+// stack.push(20);
+// stack.push(30);
+// stack.push(40);
+// console.log(stack.pop());
+
+// <====Queue Implementation===>
+// <===Linked List Basic===>
+// class Queue {
+//     constructor() {
+//         this.items = [];
+//     }
+//     enque(item) {
+//         this.items.push(item)
+//     }
+//     dequeue() {
+//         return this.items.shift();
+//     }
+// }
+
+// const queue = new Queue();
+// queue.enque("A")
+// queue.enque("B")
+// console.log(queue.dequeue());
+
+// <===Linked List Visual Concept===>
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    constructor() {
+        this.head = null;
+    }
+    append(data) {
+        const newNode = new Node(data);
+        if (!this.head) this.head = newNode;
+        else {
+            let current = this.head;
+            while (current.next) current = current.next;
+            current.next = newNode;
+        }
+    }
+    print() {
+        let current = this.head;
+        while (current) {
+            console.log(current.data);
+            current = current.next;
+        }
+    }
+}
+
+const list = new LinkedList();
+list.append(10)
+list.append(20)
+list.append(30)
+list.print()
